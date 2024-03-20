@@ -139,3 +139,10 @@ LOGGING = {
         },
     },
 }
+
+CELERY_BEAT_SCHEDULE = {
+    'send-reminders': {
+        'task': 'reminders.tasks.send_reminder_notifications',
+        'schedule': 60.0, # execute every minute
+    }
+}
